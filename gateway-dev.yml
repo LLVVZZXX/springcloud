@@ -1,0 +1,28 @@
+server:
+  port: 8222
+spring:
+  application:
+    name: shop-gateway
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    shop-user:
+      path: /shop-user
+      serviceId: shop-user
+    shop-web:
+      path: /shop-web
+      serviceId: shop-web
+  SendErrorFilter:
+    error:
+      disable: true
+
+
+
+
