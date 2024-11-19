@@ -3,10 +3,9 @@ server:
 spring:
   application:
     name: eureka-server
-    # 集群版配置
 eureka:
   client:
-    fetch-registry: true # 是否需要从Eureka获取注册信息
-    register-with-eureka: true # 是否需要把该服务注册到Eureka
-    service-url:  # 暴露Eureka注册地址
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
       defaultZone: http://localhost:8888/eureka
